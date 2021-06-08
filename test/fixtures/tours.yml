@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  denominazione: MyString
+  descrizione: MyString
+  descrizione1: MyString
+  luogo: MyString
+  giorni: MyString
+  durata: 1
+  numero: 1
+
+two:
+  denominazione: MyString
+  descrizione: MyString
+  descrizione1: MyString
+  luogo: MyString
+  giorni: MyString
+  durata: 1
+  numero: 1

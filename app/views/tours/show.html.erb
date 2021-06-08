@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Denominazione:</strong>
+  <%= @tour.denominazione %>
+</p>
+
+<p>
+  <strong>Descrizione:</strong>
+  <%= @tour.descrizione %>
+</p>
+
+<p>
+  <strong>Descrizione1:</strong>
+  <%= @tour.descrizione1 %>
+</p>
+
+<p>
+  <strong>Luogo:</strong>
+  <%= @tour.luogo %>
+</p>
+
+<p>
+  <strong>Giorni:</strong>
+  <%= @tour.giorni %>
+</p>
+
+<p>
+  <strong>Durata:</strong>
+  <%= @tour.durata %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @tour.numero %>
+</p>
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>
