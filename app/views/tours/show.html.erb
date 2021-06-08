@@ -1,39 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+<% if @tour.cover.attached? %>
+  <%= image_tag url_for(@tour.cover) %>
+<% end %>
+</p>
+
+<p>
   <strong>Denominazione:</strong>
   <%= @tour.denominazione %>
 </p>
 
 <p>
   <strong>Descrizione:</strong>
-  <%= @tour.descrizione %>
-</p>
-
-<p>
-  <strong>Descrizione1:</strong>
   <%= @tour.descrizione1 %>
 </p>
 
 <p>
-  <strong>Luogo:</strong>
+  <strong>descrizione in lingua inglese:</strong>
+  <%= @tour.descrizione %>
+</p>
+
+<p>
+  <strong>Luogo di partenza:</strong>
   <%= @tour.luogo %>
 </p>
 
 <p>
-  <strong>Giorni:</strong>
+  <strong>Giorni e orari di partenza:</strong>
   <%= @tour.giorni %>
 </p>
 
 <p>
-  <strong>Durata:</strong>
+  <strong>Durata in ore:</strong>
   <%= @tour.durata %>
 </p>
 
 <p>
-  <strong>Numero:</strong>
+  <strong>Numero  massimo di partecipanti:</strong>
   <%= @tour.numero %>
 </p>
 
-<%= link_to 'Edit', edit_tour_path(@tour) %> |
-<%= link_to 'Back', tours_path %>
+<%= link_to 'Modifica', edit_tour_path(@tour),class:"btn btn-warning" %> |
+<%= link_to 'Indietro',tours_path, class:"btn btn-info" %>

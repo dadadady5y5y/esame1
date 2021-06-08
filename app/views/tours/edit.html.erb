@@ -1,6 +1,11 @@
-<h1>Editing Tour</h1>
+<h1 class="colorrino">Modifica il tuo  Tour</h1>
 
 <%= render 'form', tour: @tour %>
+<br>
+<div>
+<%= link_to 'Mostra', @tour,class:"btn btn-secondary w-100" %> 
 
-<%= link_to 'Show', @tour %> |
-<%= link_to 'Back', tours_path %>
+<br>
+<br>
+<%= link_to 'Indietro', tours_path,class:"btn btn-info w-100" %>
+</div>

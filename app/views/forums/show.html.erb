@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cognome:</strong>
+  <%= @forum.cognome %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @forum.nome %>
+</p>
+
+<p>
+  <strong>Indirizzo:</strong>
+  <%= @forum.indirizzo %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @forum.email %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @forum.numero %>
+</p>
+
+<p>
+  <strong>Annotazioni:</strong>
+  <%= @forum.annotazioni %>
+</p>
+
+<%= link_to 'Edit', edit_forum_path(@forum) %> |
+<%= link_to 'Back', forums_path %>

@@ -1,17 +1,19 @@
+<body>
 <p id="notice"><%= notice %></p>
 
-<h1>Tours</h1>
 
-<table>
+
+<table class="table table-dark table-striped">
   <thead>
     <tr>
+      <th>Icona</th>
       <th>Denominazione</th>
       <th>Descrizione</th>
-      <th>Descrizione1</th>
-      <th>Luogo</th>
-      <th>Giorni</th>
-      <th>Durata</th>
-      <th>Numero</th>
+      <th>descrizione in lingua inglese</th>
+      <th>Luogo di partenza</th>
+      <th>Giorni e orari di partenza</th>
+      <th>Durata in ore</th>
+      <th>Numero massimo di partecipanti</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,21 +21,25 @@
   <tbody>
     <% @tours.each do |tour| %>
       <tr>
+      <td><% if tour.cover.attached? %>
+  <%= image_tag url_for(tour.cover) %>
+<% end %></td>
         <td><%= tour.denominazione %></td>
-        <td><%= tour.descrizione %></td>
         <td><%= tour.descrizione1 %></td>
+        <td><%= tour.descrizione  %></td>
         <td><%= tour.luogo %></td>
         <td><%= tour.giorni %></td>
         <td><%= tour.durata %></td>
         <td><%= tour.numero %></td>
-        <td><%= link_to 'Show', tour %></td>
-        <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
-        <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostra', tour,class:"btn btn-secondary" %></td>
+        <td><%= link_to 'Modifica', edit_tour_path(tour),class:"btn btn-warning" %></td>
+        <td><%= link_to 'Elimina', tour, class:"btn btn-danger",  method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Tour', new_tour_path %>
+
+<%= link_to 'Novo Tour', new_tour_path,class:"btn btn-success w-100" %>
+</body>

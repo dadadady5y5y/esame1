@@ -10,43 +10,51 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<br>
+<div class="field">
+    <%= form.label :Copertina %>
+    <%= form.file_field :cover %>
+  </div>
+  <br>
+  <div class="form-group">
     <%= form.label :denominazione %>
-    <%= form.text_field :denominazione %>
+    <%= form.text_field :denominazione, class:'form-control' %>
   </div>
-
-  <div class="field">
+<br>
+  <div class="form-group">
     <%= form.label :descrizione %>
-    <%= form.text_field :descrizione %>
+    <%= form.text_field :descrizione1, class:'form-control' %>
   </div>
-
-  <div class="field">
-    <%= form.label :descrizione1 %>
-    <%= form.text_field :descrizione1 %>
+<br>
+  <div class="form-group">
+    <%= form.label :descrizione_in_lingua_inglese %>
+    <%= form.text_field :descrizione, class:'form-control'  %>
   </div>
-
-  <div class="field">
-    <%= form.label :luogo %>
-    <%= form.text_field :luogo %>
+<br>
+  <div class="form-group">
+    <%= form.label :luogo_di_partenza %>
+    <%= form.text_field :luogo, class:'form-control' %>
   </div>
-
-  <div class="field">
-    <%= form.label :giorni %>
-    <%= form.text_field :giorni %>
+<br>
+  <div class="form-group">
+    <%= form.label :giorni_ed_orari_di_partenza %>
+    <%= form.text_field :giorni, class:'form-control' %>
   </div>
+<br>
 
-  <div class="field">
-    <%= form.label :durata %>
-    <%= form.number_field :durata %>
+ 
+
+  <div class="form-group">
+    <%= form.label :durata_in_ore %>
+    <%= form.number_field :durata, class:'form-control' %>
   </div>
-
-  <div class="field">
-    <%= form.label :numero %>
-    <%= form.number_field :numero %>
+<br>
+  <div class="form-group">
+    <%= form.label :numero_massimo_di_partecipanti %>
+    <%= form.number_field :numero, class:'form-control' %>
   </div>
-
+<br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Salva', class:'btn btn-success w-100' %>
   </div>
 <% end %>

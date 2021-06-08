@@ -1,4 +1,6 @@
 class ToursController < ApplicationController
+
+  before_action :authenticate_user!
   before_action :set_tour, only: %i[ show edit update destroy ]
 
   # GET /tours or /tours.json
@@ -25,7 +27,7 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.save
-        format.html { redirect_to @tour, notice: "Tour was successfully created." }
+        format.html { redirect_to @tour, notice: "Hai creato con sucesso un nuovo Tour" }
         format.json { render :show, status: :created, location: @tour }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +40,7 @@ class ToursController < ApplicationController
   def update
     respond_to do |format|
       if @tour.update(tour_params)
-        format.html { redirect_to @tour, notice: "Tour was successfully updated." }
+        format.html { redirect_to @tour, notice: "Hai modificato con sucesso il tup Tour" }
         format.json { render :show, status: :ok, location: @tour }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +53,7 @@ class ToursController < ApplicationController
   def destroy
     @tour.destroy
     respond_to do |format|
-      format.html { redirect_to tours_url, notice: "Tour was successfully destroyed." }
+      format.html { redirect_to tours_url, notice: "Hai eliminato con succeso il tuo Tour" }
       format.json { head :no_content }
     end
   end
@@ -64,6 +66,6 @@ class ToursController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tour_params
-      params.require(:tour).permit(:denominazione, :descrizione, :descrizione1, :luogo, :giorni, :durata, :numero)
+      params.require(:tour).permit(:denominazione, :descrizione1, :descrizione, :luogo, :giorni, :durata, :numero, :cover)
     end
 end
